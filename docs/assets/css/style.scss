@@ -164,3 +164,24 @@ table-wrapper{
 }*/
 
 // login CSS
+
+
+.form .register-form {
+    display: none;
+  }
+
+  .container {
+    position: relative;
+    z-index: 1;
+    max-width: 300px;
+    margin: 0 auto;
+  }
+  .container:before, .container:after {
+    content: "";
+    display: block;
+    clear: both;
+  }
+
+  
+
+  

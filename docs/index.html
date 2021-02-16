@@ -14,10 +14,14 @@
 
     <section class="hero is-dark is-fullheight has-background-black" id="full-login">
         <div class="hero-body ">
-          <div class="container ">
-            <div class="columns is-centered">
-              <div class="column is-5-tablet is-4-desktop is-3-widescreen">
-                <form action="" class="box">
+          <div class="container" >
+            <div class="columns is-centered" >
+              <div class="column is-5-tablet is-4-desktop is-3-widescreen" id="login">
+
+
+                <div class="form">
+                  <!--Register form-->
+                  <form action="" class="box register-form">
                     <div class="section has-text-centered">
                         <img src="assets/img/erp-logo-dark-b.png" alt="logo" width="250" height="auto">
                     </div>
@@ -39,13 +43,67 @@
                       <input class="input" type="password" placeholder="********">
                     </div>
                   </div>
-                  
                   <div class="field">
-                    <button class="button has-icon-right is-fullwidth is-centered is-link" formaction="home.html">
-                    Ingresar
+                    <label class="label">Correo</label>
+                    <div class="control has-icons-left">
+                      <span class="icon is-small is-left">
+                        <i class="fas fa-at"></i>
+                      </span>
+                      <input class="input" type="email" placeholder="example@example.com">
+                    </div>
+                  </div>
+
+                  <div class="field">
+                    <button class="button has-icon-right is-fullwidth is-centered is-link">
+                    Registrarse
                     </button>
                   </div>
-                </form>
+                  <div class="has-text-centered">
+                    <p class="message is-white">Esta registrado? <a href="#">Inicie sesion!</a></p>
+                  </div>
+                  </form>
+
+
+                  <!--Login form-->
+                  <form action="" class="box login-form">
+                      <div class="section has-text-centered">
+                          <img src="assets/img/erp-logo-dark-b.png" alt="logo" width="250" height="auto">
+                      </div>
+                    <div class="field">
+                      <label class="label">Usuario</label>
+                      <div class="control has-icons-left">
+                        <span class="icon is-small is-left">
+                          <i class="far fa-user"></i>
+                        </span>
+                        <input class="input" type="text" placeholder="ej. admin">
+                      </div>
+                    </div>
+                    <div class="field">
+                      <label class="label">Contraseña</label>
+                      <div class="control has-icons-left">
+                        <span class="icon is-small is-left">
+                          <i class="far fa-arrow-alt-circle-right "></i>
+                        </span>
+                        <input class="input" type="password" placeholder="********">
+                      </div>
+                    </div>
+                    
+                    <div class="field">
+                      <button class="button has-icon-right is-fullwidth is-centered is-link" formaction="home.html">
+                      Ingresar
+                      </button>
+                    </div>
+                    <div class="has-text-centered">
+                      <p class="message is-white">No esta registrado? <a href="#">Cree una cuenta!</a></p>
+                    </div>
+                  </form>
+                </div>
+
+                
+
+                
+
+
               </div>
             </div>
           </div>
