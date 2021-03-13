@@ -31,7 +31,7 @@ if (isset($_POST['save'])){
     //$_SESSION["message"] = "Cambios guardados";
     //$_SESSION["message_type"] = "green-500";
 
-    header("Location: inventario.php");
+    header("Location: inventario.html");
 }
 
 ?>

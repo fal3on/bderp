@@ -15,6 +15,6 @@
     mysqli_query($conn, "UPDATE inventario set nombre = '$nombre', modelo = '$modelo',
     descripcion = '$descripcion', precio = '$precio', cantidad = '$cantidad' WHERE id = $id ");
 
-    header('Location: inventario.php');
+    header('Location: inventario.html');
 
 ?>

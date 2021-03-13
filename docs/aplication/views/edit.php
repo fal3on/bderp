@@ -32,7 +32,7 @@
 
         $_SESSION["message"] = "Datos actualizados";
         $_SESSION["message_type"] = "blue-500";
-        header("Location: inventario.php");
+        header("Location: inventario.html");
     }
 
 ?>

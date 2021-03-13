@@ -38,6 +38,10 @@
     <script>
       $("#launchModal-edit").click(function(){
           $("#edit-modal").addClass("is-active");
+
+          
+
+
       });
 
       $(".delete").click(function(){
@@ -46,6 +50,15 @@
       $(".cancel-btn").click(function(){
           $("#edit-modal").removeClass("is-active");
       });
+    </script>
+
+    <script>
+      function myFunction(){
+        const filter = document.querySelector('#myInput').value.toUpperCase();
+        const trs = document.querySelectorAll('#myTable tr:not(.header)');
+        trs.forEach(tr => tr.style.display = [...tr.children].find(td => td.innerHTML.toUpperCase().includes(filter)) ? '' : 'none');
+
+      }
     </script>
     
 

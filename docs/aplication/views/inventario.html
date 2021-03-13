@@ -124,7 +124,7 @@
                                               <i class="fas fa-trash-alt"></i>
                                               </a>
 
-                                              <!--TESTEO MODAL-->
+                                              <!--TESTEO MODAL
                                             
                                               <button class="button is-primary" id="launchModal-edit" type="submit">
                                                   <span class="icon">
@@ -133,6 +133,10 @@
                                                   <span>Editar</span>
                                                   
                                                 </button>
+
+                                                <a class="button is-danger" id="launchModal-edit" href="#edit-modal?id=<?php echo $row['id']?>">
+                                                  <i class="fas fa-trash-alt"></i>
+                                                  </a>-->
                                             
                                               
                                               
@@ -286,9 +290,7 @@
                               <div class="control">
                                 <button class="button is-link" value="delete task" name="delete">Submit</button>
                               </div>
-                              <div class="control">
-                                <button class="button cancel-btn is-link is-light">Cancel</button>
-                              </div>
+                              
                           </div>
 
 
@@ -317,7 +319,7 @@
                     <p class="subtitle">Ingrese el ID para realizar cambios.</p>
 
 
-                    <form action="edit-modal.php?id=<?php echo $row['id']?>"" method="POST">
+                    <form action="" method="POST">
 
                           <div class="field is-horizontal">
                             <div class="field-body">
@@ -368,9 +370,7 @@
                             <div class="control">
                               <button class="button is-link">Submit</button>
                             </div>
-                            <div class="control">
-                              <button class="button cancel-btn is-link is-light">Cancel</button>
-                            </div>
+                            
                         </div>
                       
                     </form>
@@ -414,6 +414,8 @@
 
     </div>
 
+    
+
     <script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
 
     <script src="../../assets/js/script.js"></script>
@@ -455,9 +457,6 @@
       $("#launchModal-edit").click(function(){
           $("#edit-modal").addClass("is-active");
 
-          
-
-
       });
 
       $(".delete").click(function(){
@@ -476,4 +475,3 @@
 
       }
     </script>
-
