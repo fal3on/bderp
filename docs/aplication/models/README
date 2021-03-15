@@ -1,5 +1,5 @@
 sample file
-Archivos modelo que manipulan la informacion y la redirigen van aca
+modelos = The model component stores data and its related logic. It represents data that is being transferred between controller components or any other related business logic.  
 
 Ejemplo:
-save.php
+
