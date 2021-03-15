@@ -12,7 +12,7 @@
 
        // $_SESSION['message'] = 'Datos eliminados';
        // $_SESSION["message_type"] = "red-500";
-        header('Location: inventario.html');
+        header('Location: ../../views/inventario.html');
     }
 
 
