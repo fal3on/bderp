@@ -1,3 +1,4 @@
+<?php include('db.php') ?>
 <!DOCTYPE html>
 <html lang="es" class="has-navbar-fixed-top">
 <head>
@@ -146,12 +147,12 @@
                                     <div class="level-left">
 
                                       <p class="buttons">
-                                        <button class="button is-primary">
+                                        <!-- <button class="button is-primary">
                                             <span class="icon">
                                                 <i class="fas fa-edit"></i>
                                             </span>
                                             <span>Editar</span>
-                                          </button>
+                                          </button> -->
     
                                           <button class="button is-link" id="launchModal-add-sale">
                                             <span class="icon">
@@ -191,28 +192,41 @@
                                       Reporte de ventas
                                   </span>
                                   <div class="table-container">
-                                    <table class="table is-bordered is-fullwidth table-container">
+                                    <table class="table is-bordered is-fullwidth table-container" id="myTable">
                                       <thead>
                                         <tr>
-                                           <th>Id Orden</th>
-                                           <th>Id Producto</th>
-                                           <th>Cantidad</th>
-                                           <th>Valor</th>
-                                           <th>Descuento</th>
-                                           <th>Estatus</th>
-
+                                           <th>Id</th>
+                                           <th>Id Empleado</th>
+                                           <th>cantidad</th>
+                                           <th>fecha</th>
+                                           <th>valor de venta</th>
+                                           <th>id producto</th>
+                                           <th>Acciones</th>
                                         </tr>
                                      </thead>
-                    
                                      <tbody>
+                                       <?php
+                                       $query = "SELECT * FROM ventas";
+                                       $result_ventas = mysqli_query($conn, $query);
+                                       while($row = mysqli_fetch_array($result_ventas)){ ?>
+
+                                       
                                         <tr>
-                                           <td>10</td>
-                                           <td>1</td>
-                                           <td>10</td>
-                                           <td>$10000.00</td>
-                                           <td>0%</td>
-                                           <td>Entregado</td>  
-                                        </tr>                                        
+                                           <td><?php echo $row["id_ventas"] ?></td>
+                                           <td><?php echo $row["id_empleado_venta"] ?></td>
+                                           <td><?php echo $row["cantidad"] ?></td>
+                                           <td><?php echo $row["fecha_venta"] ?></td>
+                                           <td><?php echo $row["valor_venta"] ?></td>
+                                           <td><?php echo $row["id_producto"] ?></td>
+
+                                           <td>
+                                            <a class="button is-danger is-flex is-flex-center" href="../models/ventas/delete.php?id=<?php echo $row['id_ventas']?>">
+                                              <i class="fas fa-trash-alt"></i>
+                                              </a>
+                                           </td>
+
+                                        </tr>
+                                        <?php } ?>                                      
                                      </tbody>
                                     </table>
                                   </div>
@@ -249,198 +263,10 @@
           </div>
         <!--/About modal-->
 
-         <!--Agregar Modal-->
-         <div class="modal" id="add-modal">
-            <div class="modal-background"></div>
-                       
-                <div class="modal-card">
-                    <header class="modal-card-head">
-                      <p class="modal-card-title">Agregar productos</p>
-                      <button class="delete close" aria-label="close"></button>
-                    </header>
-                    <section class="modal-card-body">
-                      <!-- Content ... -->
-                      <h1 class="title">Complete el formulario</h1>
-                      <p class="subtitle">Rellene cada una de las areas solicitadas.</p>
-
-
-                      
-
-                      <div class="field is-horizontal">
-                        <div class="field-body">
-                          <div class="field">
-                            <label class="label">Id</label>
-                            <p class="control is-expanded">
-                              <input type="text" class="input" placeholder="Id">
-                            </p>
-                          </div>
-                          <div class="field">
-                            <label class="label">Cantidad</label>
-                            <p class="control is-expanded">
-                              <input type="text" class="input" placeholder="Cantidad">
-                            </p>
-                          </div>
-                        </div>
-                      </div>
-                     
-                      <div class="field">
-                        <label class="label">Nombre</label>
-                        <div class="control">
-                          <input class="input" type="text" placeholder="Nombre de producto">
-                        </div>
-                      </div>
-
-                      <div class="field is-horizontal">
-                        <div class="field-body">
-
-                          <div class="field">
-                            <label class="label">Categoria</label>
-                            <div class="control">
-                              <div class="select">
-                                <select>
-                                  <option>Seleccione categoria</option>
-                                  <option>Procesadores</option>
-                                  <option>Gráficas</option>
-                                  <option>Memorias</option>
-                                  <option>Almacenamiento</option>
-                                </select>
-                              </div>
-                            </div>
-                          </div>
-                          
-                          <div class="field">
-                            <label class="label">Precio</label>
-                            <p class="control is-expanded">
-                              <input type="text" class="input" placeholder="Valor Unitario">
-                            </p>
-                          </div>
-                        </div>
-                      </div>
-                      
-                      <div class="field">
-                        <label class="label">Descripción</label>
-                        <div class="control">
-                          <textarea class="textarea" placeholder="Texto"></textarea>
-                        </div>
-                      </div>
-
-                      
-
-                      <div class="field is-grouped">
-                        <div class="control">
-                          <button class="button is-link">Submit</button>
-                        </div>
-                        <div class="control">
-                          <button class="button cancel-btn is-link is-light">Cancel</button>
-                        </div>
-                    </div>
-                </section>
-                  </div>
-            
-        </div>
-        <!--/Agregar modal-->
-
-        <!--Eliminar Modal-->
-        <div class="modal" id="del-modal">
-            <div class="modal-background"></div>
-                           
-                <div class="modal-card">
-                    <header class="modal-card-head">
-                      <p class="modal-card-title">Eliminar productos</p>
-                      <button class="delete close" aria-label="close"></button>
-                    </header>
-                    <section class="modal-card-body">
-                      <!-- Content ... -->
-                      <h1 class="title">Complete el formulario</h1>
-                      <p class="subtitle">Ingrese el ID y cantidad de producto a eliminar.</p>
-
-                      <div class="field is-horizontal">
-                        <div class="field-body">
-                          <div class="field">
-                            <label class="label">Id</label>
-                            <p class="control is-expanded">
-                              <input type="text" class="input" placeholder="Id">
-                            </p>
-                          </div>
-                          <div class="field">
-                            <label class="label">Cantidad</label>
-                            <p class="control is-expanded">
-                              <input type="text" class="input" placeholder="Piezas a eliminar">
-                            </p>
-                          </div>
-                        </div>
-                      </div>
-
-
-
-
-                      <div class="field is-grouped">
-                        <div class="control">
-                          <button class="button is-link">Submit</button>
-                        </div>
-                        <div class="control">
-                          <button class="button cancel-btn is-link is-light">Cancel</button>
-                        </div>
-                    </div>
-
-
-                    </section>
-                  </div>
-            
-        </div>
-        <!--/Eliminar modal-->
+         
 
         <!--launchModal-add-sale-->
-        <div class="modal" id="sale-modal">
-            <div class="modal-background"></div>
-                       
-                <div class="modal-card">
-                    <header class="modal-card-head">
-                      <p class="modal-card-title">Agregar venta</p>
-                      <button class="delete close" aria-label="close"></button>
-                    </header>
-                    <section class="modal-card-body">
-                      <!-- Content ... -->
-                      <h1 class="title">Registrar venta</h1>
-                      <p class="subtitle">Ingrese una venta manualmente.</p>
-
-
-                      
-
-                      <div class="field is-horizontal" id="venta">
-                        <div class="field-body">
-                          <div class="field">
-                            <label class="label">Id producto</label>
-                            <p class="control is-expanded">
-                              <input type="text" class="input" placeholder="Id producto">
-                            </p>
-                          </div>
-                          <div class="field">
-                            <label class="label">Cantidad</label>
-                            <p class="control is-expanded">
-                              <input type="text" class="input" placeholder="Cantidad de unidades">
-                            </p>
-                          </div>
-                        </div>
-                      </div>
-
-                      <div class="field is-horizontal dynamic-element">
-
-                      </div>
-                                        
-
-                      <div class="field is-grouped">
-                        <div class="control">
-                          <button class="button is-link" id="add-row">Submit</button>
-                        </div>
-                        <div class="control">
-                          <button class="button cancel-btn is-link is-light">Cancel</button>
-                        </div>
-                    </div>
-                </section>
-                  </div>
-            
-        </div>
+        <?php include('../controllers/ventas/controller-add.php') ?>
         <!--/launchModal-add-sale-->
 
         

@@ -453,7 +453,7 @@
         <!--/launchModal-add-sale-->
         <!--launchModal-add-rh-->
 
-        <div class="modal" id="add-rh-modal">
+        <div class="modal is-active" id="add-rh-modal">
             <div class="modal-background"></div>
                        
                 <div class="modal-card">
@@ -494,37 +494,41 @@
 
                       <div class="field is-horizontal">
                         <div class="field-body">
+                          <div class="field">
+                            <label class="label">Telefono</label>
+                            <p class="control is-expanded">
+                              <input type="tel" class="input" placeholder="Telefono">
+                            </p>
+                          </div>
+                          <div class="field">
+                            <label class="label">Correo</label>
+                            <p class="control is-expanded">
+                              <input type="email" class="input" placeholder="Correo electronico">
+                            </p>
+                          </div>
+                        </div>
+                      </div>
 
+                      <div class="field is-horizontal">
+                        <div class="field-body">
+
+                          
                             
 
                               <div class="field">
-                                <label class="label">Puesto</label>
+                                <label class="label">Nacionalidad</label>
                                 <p class="control is-expanded">
-                                  <input type="text" class="input" placeholder="Puesto">
+                                  <input type="text" class="input" placeholder="Nacionalidad">
                                 </p>
                               </div>
 
 
-                              <div class="field">
-                                <label class="label">Depto</label>
-                                <div class="control">
-                                  <div class="select">
-                                    <select>
-                                      <option>Seleccione categoria</option>
-                                      <option>Recursos Humanos</option>
-                                      <option>TI</option>
-                                      <option>Ventas</option>
-                                      <option>Compras</option>
-                                      <option>Contabilidad</option>
-                                    </select>
-                                  </div>
-                                </div>
-                              </div>
+                              
 
                               <div class="field">
-                                <label class="label">Salario</label>
+                                <label class="label">Departamento</label>
                                 <p class="control is-expanded">
-                                  <input type="text" class="input" placeholder="Salario neto">
+                                  <input type="text" class="input" placeholder="Departamento">
                                 </p>
                               </div>
 
@@ -602,78 +606,7 @@
     <script src="../../assets/js/script.js"></script>
     <script src="../../assets/js/modals-launcher.js"></script>
 
-    <!-- <script>
-        $("#myBtn").click(function(){
-            $("#myModal").addClass("is-active");
-        });
-        $(".delete").click(function(){
-            $("#myModal").removeClass("is-active");
-        });
-    </script>
-    <script>
-        $("#launchModal-add").click(function(){
-            $("#add-modal").addClass("is-active");
-        });
 
-        $(".delete").click(function(){
-            $("#add-modal").removeClass("is-active");
-        });
-        $(".cancel-btn").click(function(){
-            $("#add-modal").removeClass("is-active");
-        });
-    </script>
-    <script>
-        $("#launchModal-del").click(function(){
-            $("#del-modal").addClass("is-active");
-        });
-
-        $(".delete").click(function(){
-            $("#del-modal").removeClass("is-active");
-        });
-        $(".cancel-btn").click(function(){
-            $("#del-modal").removeClass("is-active");
-        });
-    </script>
-    <script>
-        $("#launchModal-add-sale").click(function(){
-            $("#sale-modal").addClass("is-active");
-        });
-
-        $(".delete").click(function(){
-            $("#sale-modal").removeClass("is-active");
-        });
-        $(".cancel-btn").click(function(){
-            $("#sale-modal").removeClass("is-active");
-        });
-    </script>
-    <script>
-        //add fields ventas
-        
-    </script>
-    <script>
-      $("#launchModal-add-rh").click(function(){
-            $("#add-rh-modal").addClass("is-active");
-        });
-
-        $(".delete").click(function(){
-            $("#add-rh-modal").removeClass("is-active");
-        });
-        $(".cancel-btn").click(function(){
-            $("#add-rh-modal").removeClass("is-active");
-        });
-    </script>
-    <script>
-        $("#launchModal-del-rh").click(function(){
-            $("#del-rh-modal").addClass("is-active");
-        });
-
-        $(".delete").click(function(){
-            $("#del-rh-modal").removeClass("is-active");
-        });
-        $(".cancel-btn").click(function(){
-            $("#del-rh-modal").removeClass("is-active");
-        });
-    </script> -->
     
 
     
