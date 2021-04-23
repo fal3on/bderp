@@ -1,0 +1,187 @@
+html, body, .page-container{
+  //display: flex;
+  //min-height: 100vh;
+  height: 100%;
+  //flex-direction: column;
+ // background: hsl(0, 0%, 96%);
+  //overflow: hidden;
+
+  //background-color: green;
+}
+
+body{
+    display: flex;
+    flex-direction: column;
+}
+
+.content-wrap{
+    
+    flex: 1;
+}
+
+.app{
+    flex: 1 0 auto;
+}
+
+.footer{
+
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 50px;
+    text-align: center;
+    overflow: hidden;
+}
+
+// menu page CSS
+.parent{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    //max-width: 200px;
+}
+
+
+// End menu page CSS
+
+// Side Menu
+.box-shadow-y{
+    box-shadow: 0px 2px 10px rgba(0, 0,0,0.25);
+}
+
+.icon{
+    height: 30px;
+    width: 30px;
+    vertical-align: baseline;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 0;
+}
+
+.px-1, .p-1{
+    padding-right: 0.75rem;
+    padding-left: 0.75rem;
+}
+
+.py-1, .p-1{
+    padding-top: 0.75rem;
+    padding-bottom: 0.75rem;
+}
+
+.menu-container{
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    min-width: 300px;
+    z-index: 5;
+    background-color: transparent;
+
+    transform: translateX(-100%);
+    transition: all ease 0.5s;
+}
+
+.toggler{
+    margin-left: 0;
+    cursor: pointer;
+}
+
+.menu-container.active{
+    transform: translateX(0%);
+}
+
+.side-end{
+    cursor: pointer;
+    bottom: 0%;
+    right: 0;
+    position: absolute;
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: flex-end;
+}
+
+
+
+// Modal
+.modal-card{
+    width: auto;
+}
+
+
+
+// End modal
+
+// End Side Menu
+
+@media (min-width: 769px){
+    .menu-container{
+        width: 25%;
+        min-width: auto;
+        transform: translateX(0%);
+    }
+}
+
+
+@media (min-width:1024px){
+    .menu-container{
+        width: 16.66%;
+        min-width: auto;
+        transform: translateX(0%);
+    }
+}
+
+
+
+
+// Inventario
+/*
+.level{
+    align-items: center;
+    justify-content: space-between;
+}
+
+.level-left{
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.level-right{
+    align-items: center;
+    justify-content: flex-end;
+}*/
+
+.level-is-shrinkable .level-left,
+    .level-is-shrinkable .level-right {
+        flex-shrink: 1;
+    }
+
+/*
+// tabla 
+table-wrapper{
+    overflow: auto;
+}*/
+
+// login CSS
+
+
+.form .register-form {
+    display: none;
+  }
+
+  .container {
+    position: relative;
+    z-index: 1;
+    max-width: 300px;
+    margin: 0 auto;
+  }
+  .container:before, .container:after {
+    content: "";
+    display: block;
+    clear: both;
+  }
+
+  
+
+  
